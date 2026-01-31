@@ -2,7 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import Chatbot from '@/components/Chatbot';
+
 import Image from 'next/image';
 
 interface User {
@@ -18,7 +18,7 @@ interface LandingPageProps {
 
 export default function Landing({ currentUser }: LandingPageProps) {
     const router = useRouter();
-    const [activeFloating, setActiveFloating] = useState<string | null>(null);
+
 
     const handleLoginClick = () => {
         router.push('/login');
@@ -160,13 +160,7 @@ export default function Landing({ currentUser }: LandingPageProps) {
                 </p>
             </div>
 
-            {/* Chatbot floating */}
-            <Chatbot
-                events={[]}
-                refreshSignal={0}
-                isOpen={activeFloating === 'chatbot'}
-                onToggle={(val) => setActiveFloating(val ? 'chatbot' : null)}
-            />
+
 
             <style jsx>{`
         @keyframes blob {

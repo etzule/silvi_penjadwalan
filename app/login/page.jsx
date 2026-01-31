@@ -1,14 +1,14 @@
 "use client";
 
 import AuthPanel from '@/components/AuthPanel';
-import Chatbot from '@/components/Chatbot';
+
 import { Toaster } from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 export default function LoginPage() {
   const router = useRouter();
-  const [activeFloating, setActiveFloating] = useState(null);
+
 
   useEffect(() => {
     // if already logged in, go to home
@@ -69,13 +69,7 @@ export default function LoginPage() {
         </div>
       </div>
 
-      {/* Chatbot floating */}
-      <Chatbot
-        events={[]}
-        refreshSignal={0}
-        isOpen={activeFloating === 'chatbot'}
-        onToggle={(val) => setActiveFloating(val ? 'chatbot' : null)}
-      />
+
 
       <style jsx>{`
         @keyframes blob {
